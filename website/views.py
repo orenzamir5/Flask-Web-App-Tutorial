@@ -35,3 +35,17 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
+
+@views.route('/api/search', methods=['GET'])
+#@login_required
+def return_product():
+    return jsonify(
+        username="orenz",
+        email="test@gmail.com",
+        id=4
+    )
+
+@views.route('/news', methods=['GET', 'POST'])
+@login_required
+def news():
+    return render_template("news.html", user=current_user)
